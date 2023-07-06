@@ -5,8 +5,12 @@ import json
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
+import json
+
+from django.contrib.auth import authenticate, login
 
 User = get_user_model()
+
 
 def banners(request):
 	data = [
@@ -304,10 +308,6 @@ def signIn(request):
 		else:
 			return HttpResponse(status=500)
 
-def signUp(request):
-	user = User.objects.create_user("mir232", "lennon@thebeatles.com", "pass232")
-	user.save()
-	return HttpResponse(status=200)
 
 def signOut(request):
 	logout(request)
