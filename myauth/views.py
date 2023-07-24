@@ -108,7 +108,6 @@ class SignUpView(APIView):
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-
 def signOut(request):
     logout(request)
     return Response(status=status.HTTP_200_OK)

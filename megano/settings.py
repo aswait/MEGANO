@@ -40,10 +40,14 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'phone_field',
-    
+    'django_filters',
+    'filters',
+
     'frontend',
     'api',
     'myauth.apps.MyauthConfig',
+    'products.apps.ProductsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -55,6 +59,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ),
+}
 
 ROOT_URLCONF = 'megano.urls'
 
